@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="styles.css">
+<script href="script.js" defer></script>
+</head>
+<body>
+<script src="script.js" defer></script>
+<div id="modal" title="Упражнение">
+<span id="close">&#10006</span>
+<img class="modal-content" id="img" src="base.png">
+</div>
+<div class="content">
+<!--<details>
+<summary class="menu">Аннотация</summary>
+<p><b>Назначение:</b>
+<br>
+&emsp;Решение проблемы необходимого функционала для проведения урока	
+<br>
+<b>Целевая аудитория:</b>
+<br>
+&emsp;Преподаватели, ведущие занятия в группах.
+</p>
+</details>
+<details>
+<summary class="menu">Варианты использования</summary>
+<img src="usage.jpg" alt="Вариант использования" width="900px" height="674px" title="Вариант использования" align="center" usemap="#table">
+<map name="table">
+<area shape="circle" coords="470,130,30" title="Работа со списком учащихся" class="area">
+<area shape="circle" coords="710, 95, 30" title="Удаление списка учащихся" class="area">
+<area shape="circle" coords="430,350,30" title="Вызвать ученика" class="area">
+<area shape="circle" coords="680,360,30" title="Создать таймер" class="area">
+<area shape="circle" coords="570,220,30" title="Запустить предустановленный таймера" class="area">
+<area shape="circle" coords="430,447,43" title="Разбиение класса по количеству групп" class="area">
+<area shape="circle" coords="390,590,40" title="Разбиение класса по количеству учащихся в группе" class="area">
+<area shape="circle" coords="360,60,30" title="Управление фоновой музыкой" class="area">
+</map>
+<table id="alternative" border="3">
+<caption></caption>
+<tr>
+<th>Концепция</th>
+<th>Логика</th>
+<th>Физика</th>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</details>
+<details>
+<summary class="menu">Сценарии использования</summary>
+<p><strong>П</strong> - преподаватель.
+<br>
+<strong>ВП</strong> - web-приложение.
+</p>
+<div class="Управление фоновой музыкой">
+<p>
+<strong>Управление фоновой музыкой</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел «Реализация».</li>
+<li><b>ВП</b> отображает раздел «Реализация».</li>
+<li><b>П</b> нажимает на кнопку включения/выключения музыки.</li>
+<li><b>ВП</b> включает/выключает музыку.</li>
+</ol>
+</div>
+</div>
+<div class="Работа со списком учащихся">
+<p>
+<strong>Работа со списком учащихся</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел для работы со списком учащихся.</li>
+<li><b>ВП</b> отображает раздел для работы со списком учащихся.</li>
+<li><b>П</b> вводит/корректирует список учащихся.</li>
+<li><b>П</b> нажимает «Сохранить».</li>
+<li><b>ВП</b> сохраняет список учащихся.</li>
+</ol>
+</div>
+</div>
+<div class="Удаление списка учащихся">
+<p>
+<strong>Удаление списка учащихся</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел для работы со списком учащихся.</li>
+<li><b>ВП</b> отображает раздел для работы со списком учащихся.</li>
+<li><b>П</b> нажимает «Очистить».</li>
+<li><b>ВП</b> удаляет список учащихся, очищает поля групп и случайного ученика.</li>
+</ol>
+</div>
+</div>
+<div class="Запустить предустановленный таймера">
+<p>
+<strong>Использование предустановленного таймера</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел для управления таймером.</li>
+<li><b>ВП</b> отображает раздел для управления таймером.</li>
+<li><b>П</b> нажимает «Начать занятие».</li>
+<li><b>ВП</b> начаинает отсчет времени.</li>
+<li><b>ВП</b> заканчивает отсчет времени.</li>
+</ol>
+</div>
+</div>
+<div class="Создать таймер">
+<p>
+<strong>Создать таймер</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел для управления таймером.</li>
+<li><b>ВП</b> отображает раздел для управления таймером.</li>
+<li><b>П</b> настраивает время таймера.</li>
+<li><b>П</b> нажимает «Запустить».</li>
+<li><b>ВП</b> начинает отсчет таймера пользователя.</li>
+<ul>
+<li><span class="caret"><b>ВП</b> заканчивает отсчет времени.</span></li>
+<ul>
+<li><b>ВП</b> проигрывает аудио.</li>
+<li><b>ВП</b> отображает случайное упражнение.</li>
+<li><b>П</b> закрывает изображение упражнения.</li>
+</ul>
+<li><span class="caret"><b>П</b> нажимает «Остановить».</span></li>
+<ul>
+<li><b>ВП</b> останавливает отсчет таймера/проигрыш аудио.</li>
+</ul>
+</ul>
+</ol>
+</div>
+</div>
+<div class="Вызвать ученика">
+<p>
+<strong>Вызвать ученика</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел для выбора случайного ученика.</li>
+<li><b>ВП</b> отображает раздел для выбора случайного ученика.</li>
+<li><b>П</b> нажимает «Выбрать случайного ученика».</li>
+<li><b>ВП</b> выбирает случайным образом ученика и выводит его в соотвествующее поле.</li>
+</ol>
+</div>
+</div>
+<div class="Разбиение класса по количеству групп">
+<p>
+<strong>Разбиение класса по количеству групп</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел «Разбиение класс по количеству групп».</li>
+<li><b>ВП</b> отображает раздел «Разбиение класс по количеству групп».</li>
+<li><b>П</b> вводит количество групп.</li>
+<li><b>П</b> нажимает «Разбить на группы».</li>
+<li><b>ВП</b> отображает созданные группы.</li>
+</ol>
+</div>
+</div>
+<div class="Разбиение класса по количеству учащихся в группе">
+<p>
+<strong>Разбиение класса по количеству учащихся в группе</strong>
+</p>
+<div>
+<ol>
+<li><b>П</b> переходит в раздел «Разбиение класса по количеству учащихся в группе».</li>
+<li><b>ВП</b> отображает раздел «Разбиение класса по количеству учащихся в группе».</li>
+<li><b>П</b> вводит количество учашихся в группе.</li>
+<li><b>П</b> нажимает «Разбить на группы».</li>
+<li><b>ВП</b> отображает созданные группы.</li>
+</ol>
+</div>
+</div>
+</details>
+<details>
+<summary class="menu">Сценарии взаимодействия</summary>
+<p>
+<strong>Us</strong> - User.
+<br>
+<strong>Br</strong> - Browser.
+<br>
+<strong>DS</strong> - Data Storage.
+</p>
+<p>
+<strong>Вход в систему</strong>
+</p>
+<p>
+<ol>
+<li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+<li><b>Br</b> отображает главный раздел.</li>
+<li><b>Br</b> запрашивает у <b>DS</b> список учащихся. </li>
+<li><b>Br</b> загружает список учащихся в раздел для работы со списком учащихся.</li>
+</ol>
+</p>
+<div class="Управление фоновой музыкой">
+<p>
+<strong>Управление фоновой музыкой</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> просит <b>Br</b> включить/выключить фоновую музыку.</li>
+<li><b>Br</b> включает/выключает фоновую музыку.</li>
+</ol>
+</div>
+</div>
+<div class="Работа со списком учащихся">
+<p>
+<strong>Работа со списком учащихся</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> работает со списком учащихся.</li>
+<li><b>Us</b> просит <b>Br</b> соханить список учащихся.</li>
+<li><b>Br</b> просит <b>DS</b> созранить список учащихся.</li>
+<li><b>DS</b> сохраняет список учащихся.</li>
+</ol>
+</div>
+</div>
+<div class="Удаление списка учащихся">
+<p>
+<strong>Удаление списка учащихся</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> просит <b>Br</b> удалить список учащихся.</li>
+<li><b>Br</b> просит <b>DS</b> созранить список учащихся.</li>
+<li><b>DS</b> удаляет список учащихся</li>
+<li><b>Br</b> очищает поля групп и случайного ученика.</li>
+</ol>
+</div>
+</div>
+<div class="Запустить предустановленный таймера">
+<p>
+<strong>Использование предустановленного таймера</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> просит <b>Br</b> начать отсчет времени.</li>
+<li><b>Br</b> начинает отсчет времени.</li>
+</ol>
+</div>
+</div>
+<div class="Создать таймер">
+<p>
+<strong>Создать таймер</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> настраивает таймер.</li>
+<li><b>Us</b> просит <b>Br</b> начать отсчет времени.</li>
+<li><b>Br</b> начинает отсчет времени.</li>
+</ol>
+</div>
+</div>
+<div class="Вызвать ученика">
+<p>
+<strong>Вызвать ученика</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> просит <b>Br</b> вызвать случайного ученика.</li>
+<li><b>Br</b> запрашивает у <b>DS</b> список учащихся.</li>
+<li><b>Br</b> выбирает случайного ученика.</li>
+</ol>
+</div>
+</div>
+<div class="Разбиение класса по количеству групп">
+<p>
+<strong>Разбиение класса по количеству групп</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> вводит количество групп.</li>
+<li><b>Us</b> просит <b>Br</b> разбить класс на группы.</li>
+<li><b>Br</b> запращивает у <b>DS</b> список учашихся.</li>
+<li><b>Br</b> разбивает класс на группы.</li>
+</ol>
+</div>
+</div>
+<div class="Разбиение класса по количеству учащихся в группе">
+<p>
+<strong>Разбиение класса по количеству учащихся в группе</strong>
+</p>
+<div>
+<ol>
+<li><b>Us</b> вводит количество учащихся в группе.</li>
+<li><b>Us</b> просит <b>Br</b> разбить класс на группы.</li>
+<li><b>Br</b> запращивает у <b>DS</b> список учашихся.</li>
+<li><b>Br</b> разбивает класс на группы.</li>
+</ol>
+</div>
+</div>
+</details>
+<details>
+<summary class="menu">Сценарии выполнения</summary>
+<pre>
+<strong>start()</strong> 
+  loadStudentList()
+  showCountStudents(studentList)
+</pre>
+<div class="Управление фоновой музыкой">
+<pre>
+<strong>button.manage_sound.onclick</strong>
+  onOffSound()
+</pre>
+</div>
+<div class="Работа со списком учащихся">
+<pre>
+<strong>button.saveStudentList.onclick</strong>
+  showCountStudents()
+  saveStudentList()
+</pre>
+</div>
+<div class="Удаление списка учащихся">
+<pre>
+<strong>button.clearStudentList</strong>
+	clearStudentList()
+</pre>
+</div>
+<div class="Запустить предустановленный таймера">
+<pre>
+<strong>button.startLesson.onclick</strong>
+  timeWarmup()
+</pre>
+<pre>
+<strong>button.close.onclick</strong>
+  closeImg()
+  stopTimer()
+</pre>
+</div>
+<div class="Создать таймер">
+<pre>
+<strong>button.startCustomTimer.onclick</strong>
+  startCustomTimer()
+</pre>
+<div>
+<pre>
+<strong>button.stopCustomTimer.onclick</strong>
+  stopCustomTimer()
+  startCustomTimer()
+</pre>
+</div>
+<div class="Вызвать ученика">
+<pre>
+<strong>button.chooseRandomStudent.onclick</strong>
+  saveStudentList()
+  RandomStudent()
+</pre>
+</div>
+<div class="Разбиение класса по количеству групп">
+<pre>
+<strong>button.group.onlick</strong>
+  loadStudentList()
+  makeGroups()
+  makeNewGroup()
+</pre>
+</div>
+<div class="Разбиение класса по количеству учащихся в группе">
+<pre>
+<strong>button.group.onlick</strong>
+  loadStudentList()
+  makeGroups()
+  makeNewGroup()
+</pre>
+</div>
+</details>-->
+<!--<details>-->
+<summary class="menu">Реализация</summary>
+<button id="manage_sound" onclick="onOffSound"> <img src="sound_image_off.png" width="200px"> </button>
+<details>
+<summary>Список учеников</summary>
+<table>
+<tr>
+<th>
+<textarea rows="10" cols="50" id="studentList" placeholder="После введения имени ученика, если он не последний, нажмите Enter для корректной работы" spellcheck="false">
+</textarea>
+</th>
+</tr>
+</table>
+<button id="saveStudentList" onclick="saveStudentList">Cохранить</button>
+<button id="clearStudentList">Очистить</button>
+<br>
+<!--<textarea rows="1" cols="20" placeholder="Здесь будет общее количество учеников" id="amountStudents" readonly hidden=true>
+</textarea>-->
+</details>
+<details>
+<summary>Выбор случайного ученика</summary>
+<textarea id="randomStudent" readonly rows="2" cols="40">
+Здесь будет отображен случайный ученик:
+</textarea>
+<br>
+<button id="chooseRandomStudent">Выбрать случайного ученика</button>
+<br>
+</details>
+<details>
+<summary>Таймер</summary>
+<p><input name="Timer" id="Timer" type="time" title="Таймер урока"></p>
+<button id="startLesson" title="Таймер на 5 минут">Начать занятие</button>
+<button id="stopTimer" title="Остановить таймер">Конец занятия</button>
+<br>	
+<p><input name="countTimer" id="customTimer" type="time" title="Таймер пользователя"></p>
+<button id="startCustomTimer" title="Таймер на заданное пользователем время">Запустить</button>
+<button id="stopCustomTimer" title="Остановить таймер пользователя">Остановить</button>
+</details>
+<details>
+<summary>Рабиение по количеству учащихся в группе</summary>
+<textarea rows="1" cols="35" id="sizeGroup" placeholder="Количество учащихся в каждой группе">
+</textarea>
+</details>
+<details>
+<summary>Разбиение по количеству групп</summary>
+<textarea rows="1" cols="15" id="amountGroup" placeholder="Количество групп">
+</textarea>
+</details>
+<button id="group">Разбить на группы</button>
+<!--</details>-->
+<!--<details>
+<summary class="menu">Результаты проверки</summary>
+<p style="font-size: 20px">
+Следует добавить невозможность использования других символов кроме букв, "." и знака переноса строки в разделе «Работа со списком учащихся». Следует добавить скрипт для нескольких сменяющихся изображений упражнений для разминки. Для разгрузки интерфейса следует добавить закрывающиеся/открывающиеся ветвления в разделе «Сценарии использования» для подраздела «Создать таймер».
+</p>
+</details>-->
+</div>
+<div id="groups">
+</div>
+</body>
+</html>

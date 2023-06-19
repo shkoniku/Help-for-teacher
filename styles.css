@@ -1,0 +1,89 @@
+body{
+	overflow: auto;
+	align:left;
+}
+
+.content{
+	width: 80%;
+	padding-top: 20px;
+	text-align: left;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+
+
+#close{
+	margin-left: 700px;
+	font-size: 25px;
+}
+
+#close:hover,
+#close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu{
+	font-size: 20px;
+	float:bottom;
+}
+
+/*UL.nested{
+	display: none;
+}
+
+.caret{
+	cursor: pointer;
+	user-select: none;	
+}*/
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#amountStudents{
+	disabled: true;
+	resize: none;
+}
+
+#sizeGroup{
+	resize: none;
+}
+
+#amountGroup{
+	resize: none;
+}
+
+#randomStudent{
+	resize: none;
+}
+
+#alternative{
+	display: none;
+	border: 3px;
+}
